@@ -1,0 +1,77 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+venv/
+ENV/
+env/
+.venv
+
+# IDE
+.vscode/
+.devcontainer/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Data & documents (large files)
+docs/
+data/raw/
+qdrant_data/
+ollama_models/
+
+# Vector DB & cache
+.cache/
+*.db
+*.sqlite
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# LLM model cache
+~/.ollama/
+~/.cache/huggingface/
+.huggingface/
+
+# Pytest
+.pytest_cache/
+htmlcov/
+
+# Temporary
+*.tmp
+*.log
+.coverage
+
+# Architecture
+Architecture.md
