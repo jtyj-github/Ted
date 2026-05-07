@@ -26,3 +26,7 @@ PARENT_CHUNK_SIZE = 1600
 PARENT_CHUNK_OVERLAP = 100
 
 HYBRID_ALPHA = float(os.getenv("HYBRID_ALPHA", "0.5").split("#")[0].strip())
+
+RERANKER_MODEL = os.getenv("RERANKER_MODEL", "BAAI/bge-reranker-v2-m3")
+INITIAL_RETRIEVE_K = 20   # candidates from hybrid search
+FINAL_RETRIEVE_K = 5      # returned after reranking
