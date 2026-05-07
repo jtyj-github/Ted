@@ -43,7 +43,11 @@ def run_ingestion(
 
     for pdf_path in tqdm(pdf_files, desc="Ingesting", unit="doc"):
         try:
-            rel_path = pdf_path.relative_to(docs_dir) if not single_file else Path(pdf_path.name)
+            abs_path = pdf_path.resolve()
+            try:
+                rel_path = abs_path.relative_to(DOCS_DIR.resolve())
+            except ValueError:
+                rel_path = Path(pdf_path.name)
             doc_meta = lookup(rel_path)
 
             pages = parse_pdf(pdf_path)

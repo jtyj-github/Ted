@@ -9,6 +9,9 @@ from loguru import logger
 from src.config import CHILD_CHUNK_SIZE, CHILD_CHUNK_OVERLAP, PARENT_CHUNK_SIZE, PARENT_CHUNK_OVERLAP
 from src.ingestion.metadata_extractor import build_chunk_metadata
 
+# embed HTML page markers at each start to keep pages
+_PAGE_MARKER_RE = re.compile(r'<!--PAGE:(\d+)-->')
+
 _HEADERS_TO_SPLIT_ON = [
     ("#", "h1"),
     ("##", "h2"),
@@ -104,7 +107,6 @@ class HierarchicalChunker:
             parents: list of section-level dicts (for context retrieval)
             children: list of clause-level dicts (for vector retrieval)
         """
-        # Concatenate pages, recording character offsets for page lookup
         full_text = ""
         page_boundaries: list[dict] = []
 
