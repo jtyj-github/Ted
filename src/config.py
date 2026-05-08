@@ -30,3 +30,8 @@ HYBRID_ALPHA = float(os.getenv("HYBRID_ALPHA", "0.5").split("#")[0].strip())
 RERANKER_MODEL = os.getenv("RERANKER_MODEL", "BAAI/bge-reranker-v2-m3")
 INITIAL_RETRIEVE_K = 20   # candidates from hybrid search
 FINAL_RETRIEVE_K = 5      # returned after reranking
+
+LLAMACPP_HOST = os.getenv("LLAMACPP_HOST", "http://localhost:8080")
+LLM_MODEL_NAME = "qwen3" 
+LLM_MAX_TOKENS = 2048
+LLM_TEMPERATURE = 0.1
