@@ -7,7 +7,7 @@ from pathlib import Path
 
 # Keys are Path objects (OS-independent) relative to docs/
 DOCUMENT_REGISTRY: dict[Path, dict] = {
-    # BCA Approved Documents
+    # BCA — Building & Construction Authority
     Path("BCA/approved_documents/Volume-1-Introduction.pdf"): {
         "source_doc": "BCA Approved Documents — Volume 1 Introduction",
         "authority": "BCA",
@@ -33,17 +33,50 @@ DOCUMENT_REGISTRY: dict[Path, dict] = {
         "authority": "BCA",
         "category": "accessibility",
     },
-    Path("BCA/handbooks/non-resi-handbook.pdf"): {
-        "source_doc": "BCA Non-Residential Design Handbook",
+    Path("BCA/accessibility/bca-coaguide2025.pdf"): {
+        "source_doc": "BCA Guide to the Code on Accessibility 2025",
         "authority": "BCA",
-        "category": "handbooks",
+        "category": "accessibility",
     },
-    Path("BCA/handbooks/resi-handbook.pdf"): {
-        "source_doc": "BCA Residential Design Handbook",
+    Path("BCA/buildability/cop2017.pdf"): {
+        "source_doc": "BCA Code of Practice on Buildability 2017",
         "authority": "BCA",
-        "category": "handbooks",
+        "category": "buildability",
     },
-    # SCDF
+    Path("BCA/buildable_design/codeofpractice.pdf"): {
+        "source_doc": "BCA Code of Practice on Buildable Design",
+        "authority": "BCA",
+        "category": "buildable_design",
+    },
+    # LTA — Land Transport Authority
+    Path("LTA/railway/Code_of_Practice_for_Railway_Protection.pdf"): {
+        "source_doc": "LTA Code of Practice for Railway Protection",
+        "authority": "LTA",
+        "category": "railway",
+    },
+    # NEA — National Environment Agency
+    Path("NEA/environmental_health/copeh-2025.pdf"): {
+        "source_doc": "NEA Code of Practice for Environmental Health 2025",
+        "authority": "NEA",
+        "category": "environmental_health",
+    },
+    # PUB — Public Utilities Board
+    Path("PUB/drainage/Code-of-Practice-on-Surface-Water-Drainage.pdf"): {
+        "source_doc": "PUB Code of Practice on Surface Water Drainage",
+        "authority": "PUB",
+        "category": "drainage",
+    },
+    Path("PUB/drainage/COP_Surface Water Drainage 2011.pdf"): {
+        "source_doc": "PUB Code of Practice on Surface Water Drainage — 2011 Edition",
+        "authority": "PUB",
+        "category": "drainage",
+    },
+    Path("PUB/drainage/COP_Surface Water Drainage_7th Ed Add. 1 (1).pdf"): {
+        "source_doc": "PUB Code of Practice on Surface Water Drainage — 7th Edition Addendum 1",
+        "authority": "PUB",
+        "category": "drainage",
+    },
+    # SCDF — Singapore Civil Defence Force
     Path("SCDF/fire_code/firecode-2023-111220241013.pdf"): {
         "source_doc": "SCDF Fire Code 2023",
         "authority": "SCDF",
@@ -74,7 +107,7 @@ DOCUMENT_REGISTRY: dict[Path, dict] = {
         "authority": "SCDF",
         "category": "singapore_standards",
     },
-    # URA
+    # URA — Urban Redevelopment Authority
     Path("URA/conservation_guidelines.pdf"): {
         "source_doc": "URA Conservation Guidelines",
         "authority": "URA",
@@ -85,41 +118,15 @@ DOCUMENT_REGISTRY: dict[Path, dict] = {
         "authority": "URA",
         "category": "planning",
     },
-    # Codes of Practice
-    Path("codes_of_practice/buildability/cop2017.pdf"): {
-        "source_doc": "BCA Code of Practice on Buildability 2017",
-        "authority": "BCA",
-        "category": "codes_of_practice",
+    Path("URA/handbooks/non-resi-handbook.pdf"): {
+        "source_doc": "URA Non-Residential Development Handbook",
+        "authority": "URA",
+        "category": "handbooks",
     },
-    Path("codes_of_practice/buildable_design/codeofpractice.pdf"): {
-        "source_doc": "BCA Code of Practice on Buildable Design",
-        "authority": "BCA",
-        "category": "codes_of_practice",
-    },
-    Path("codes_of_practice/drainage/Code-of-Practice-on-Surface-Water-Drainage.pdf"): {
-        "source_doc": "PUB Code of Practice on Surface Water Drainage",
-        "authority": "PUB",
-        "category": "codes_of_practice",
-    },
-    Path("codes_of_practice/drainage/COP_Surface Water Drainage 2011.pdf"): {
-        "source_doc": "PUB Code of Practice on Surface Water Drainage — 2011 Edition",
-        "authority": "PUB",
-        "category": "codes_of_practice",
-    },
-    Path("codes_of_practice/drainage/COP_Surface Water Drainage_7th Ed Add. 1 (1).pdf"): {
-        "source_doc": "PUB Code of Practice on Surface Water Drainage — 7th Edition Addendum 1",
-        "authority": "PUB",
-        "category": "codes_of_practice",
-    },
-    Path("codes_of_practice/environmental_health/copeh-2025.pdf"): {
-        "source_doc": "NEA Code of Practice for Environmental Health 2025",
-        "authority": "NEA",
-        "category": "codes_of_practice",
-    },
-    Path("codes_of_practice/railway/Code_of_Practice_for_Railway_Protection.pdf"): {
-        "source_doc": "LTA Code of Practice for Railway Protection",
-        "authority": "LTA",
-        "category": "codes_of_practice",
+    Path("URA/handbooks/resi-handbook.pdf"): {
+        "source_doc": "URA Residential Development Handbook",
+        "authority": "URA",
+        "category": "handbooks",
     },
     # Legal & Regulatory
     Path("legal_regulatory/Architects Act 1991.pdf"): {
