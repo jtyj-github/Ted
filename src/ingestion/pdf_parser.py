@@ -16,12 +16,24 @@ def parse_pdf(pdf_path: Path) -> list[dict[str, Any]]:
     """
     logger.info(f"Parsing: {pdf_path.name}")
     try:
-        pages: list[dict] = pymupdf4llm.to_markdown(
+        raw = pymupdf4llm.to_markdown(
             str(pdf_path),
             page_chunks=True,
             write_images=False,
         )
-        non_empty = sum(1 for p in pages if p.get("text", "").strip())
+
+        # to_markdown() returns None for encrypted or unreadable PDFs instead of raising
+        if raw is None:
+            logger.warning(f"  to_markdown() returned None — skipping: {pdf_path.name}")
+            return []
+
+        # Older builds return a plain string when page_chunks is silently ignored
+        if isinstance(raw, str):
+            logger.warning(f"  to_markdown() returned a string, not page chunks — skipping: {pdf_path.name}")
+            return []
+
+        pages: list[dict] = raw
+        non_empty = sum(1 for p in pages if (p.get("text") or "").strip())
         logger.info(f"  {len(pages)} pages, {non_empty} non-empty")
 
         if non_empty == 0:
@@ -29,5 +41,5 @@ def parse_pdf(pdf_path: Path) -> list[dict[str, Any]]:
 
         return pages
     except Exception as exc:
-        logger.error(f"Failed to parse {pdf_path.name}: {exc}")
+        logger.exception(f"Failed to parse {pdf_path.name}: {exc}")
         raise

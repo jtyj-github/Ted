@@ -10,7 +10,11 @@ def _format_chunks(chunks: list[RetrievedChunk]) -> str:
 
     parts: list[str] = []
     for i, chunk in enumerate(chunks, 1):
-        parts.append(f"[{i}] {chunk.citation()}\n\n{chunk.parent_text}")
+        parts.append(
+            f"[{i}] {chunk.citation()}\n\n"
+            f"VERBATIM CLAUSE TEXT:\n"
+            f"{chunk.parent_text}"
+        )
 
     return "\n\n---\n\n".join(parts)
 

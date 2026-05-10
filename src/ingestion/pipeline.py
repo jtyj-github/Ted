@@ -67,7 +67,7 @@ def run_ingestion(
             total_children += len(children)
 
         except Exception as exc:
-            logger.error(f"  Failed: {pdf_path.name} — {exc}")
+            logger.exception(f"  Failed: {pdf_path.name} — {exc}")
             failed.append(pdf_path.name)
 
     logger.info(
